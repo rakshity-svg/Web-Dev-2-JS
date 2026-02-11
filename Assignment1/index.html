@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Smart Event Dashboard - Assignment1</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<main class="container">
+			<h1>Smart Event Dashboard</h1>
+
+			<section class="form-section">
+				<h2>Create Event</h2>
+				<form id="eventForm">
+					<label>Title <input required id="title" name="title" /></label>
+					<label>Date <input required id="date" type="date" name="date" /></label>
+					<label>Time <input id="time" type="time" name="time" /></label>
+					<label>Location <input id="location" name="location" /></label>
+					<label>Category
+						<select id="category" name="category">
+							<option value="General">General</option>
+							<option value="Meetup">Meetup</option>
+							<option value="Workshop">Workshop</option>
+							<option value="Concert">Concert</option>
+						</select>
+					</label>
+					<label>Description
+						<textarea id="description" name="description" rows="3"></textarea>
+					</label>
+					<label>Image URL <input id="image" name="image" placeholder="optional image url" /></label>
+
+					<div class="form-actions">
+						<button id="createBtn" type="submit">Create Event</button>
+						<button id="resetBtn" type="reset">Reset</button>
+					</div>
+				</form>
+			</section>
+
+			<section class="controls">
+				<h2>Live DOM / Demo Controls</h2>
+				<p>Click cards to observe event bubbling and delegation. Use the buttons on cards to interact.</p>
+				<div class="demo-output" id="demoOutput">Demo messages will appear here.</div>
+			</section>
+
+			<section class="cards-section">
+				<h2>Events</h2>
+				<div id="cardsContainer" class="cards-container" aria-live="polite"></div>
+			</section>
+
+			<section class="notes">
+				<h3>Notes (innerText vs textContent vs innerHTML)</h3>
+				<p id="textDemo">This <strong>text</strong> demonstrates <code>innerHTML</code> vs <code>textContent</code>.</p>
+				<button id="showInnerHTML">Show innerHTML</button>
+				<button id="showTextContent">Show textContent</button>
+				<button id="showInnerText">Show innerText</button>
+			</section>
+		</main>
+
+		<script src="script.js" defer></script>
+	</body>
+</html>
+
